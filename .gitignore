@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+__pycache__/
+venv/
+
+# Secrets
+.env
+
+# Saved page snapshots (big and noisy)
+snapshots/
+
+# macOS
+.DS_Store
