@@ -2,8 +2,9 @@ name: Palworld Stock Check
 
 on:
   schedule:
-    - cron: "*/15 * * * *"   # every 15 minutes
-  workflow_dispatch:          # manual "Run" button
+    - cron: "*/15 * * * *"   # every 15 minutes — normal silent checks
+    - cron: "0 12 * * *"     # once a day at 12:00 UTC — daily heartbeat summary
+  workflow_dispatch:          # manual "Run" button (always reports back)
 
 jobs:
   check:
@@ -22,6 +23,8 @@ jobs:
       - name: Run checker
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          MANUAL_RUN: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
+          HEARTBEAT: ${{ github.event.schedule == '0 12 * * *' && '1' || '0' }}
         run: python probShopifySites.py
 
       - name: Save state back to repo
