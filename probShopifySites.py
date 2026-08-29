@@ -5,12 +5,12 @@ URL = "https://thecardvault.co.uk/collections/palworld-official-card-game-all-pr
 HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
 WATCH_KEYWORDS = ["set 02", "set 2", "legends awaken"]
 STATE_FILE = "seen.json"
-DISCORD_WEBHOOK = os.environ["DISCORD_WEBHOOK"]   # comes from a GitHub secret
+DISCORD_WEBHOOK = os.environ["DISCORD_WEBHOOK"]
 
 # --- Toggles (read from environment variables set by the workflow) ---
-TEST_MODE  = os.environ.get("TEST_MODE") == "1"     # forces a fake alert to test the webhook
-HEARTBEAT  = os.environ.get("HEARTBEAT") == "1"     # daily "we checked" summary
-MANUAL_RUN = os.environ.get("MANUAL_RUN") == "1"    # you clicked "Run workflow" in GitHub
+TEST_MODE  = os.environ.get("TEST_MODE") == "1"
+HEARTBEAT  = os.environ.get("HEARTBEAT") == "1"
+MANUAL_RUN = os.environ.get("MANUAL_RUN") == "1"
 
 
 def get_products():
@@ -45,22 +45,19 @@ def check():
     state = load_state()
     products = get_products()
     current = []
-    watched_in_stock = []   # track in-stock watched items for the summary
+    watched_in_stock = []
 
     for p in products:
         handle, title = p["handle"], p["title"]
         current.append(handle)
 
-        # New product appeared (skips the very first run so you don't get spammed)
         if handle not in state["known_handles"] and state["known_handles"]:
             alert(f"NEW PRODUCT: {title}\nhttps://thecardvault.co.uk/products/{handle}")
 
-        # Watched item stock tracking
         if is_watched(title):
             in_stock = any(v["available"] for v in p["variants"])
             if in_stock:
                 watched_in_stock.append(title)
-            # Only alert when it FLIPS from out-of-stock to in-stock
             if in_stock and not state["stock"].get(handle, False):
                 alert(f"BACK IN STOCK: {title}\nhttps://thecardvault.co.uk/products/{handle}")
             state["stock"][handle] = in_stock
@@ -75,13 +72,10 @@ def check():
             items = "\n".join(f"• {t}" for t in watched_in_stock)
             alert(f"✅ Checked {len(products)} products — these watched items are IN STOCK:\n{items}")
         else:
-            # No @here ping for a "nothing happened" message
             alert(f"✅ Checked {len(products)} products — nothing watched is in stock right now! 😴", ping=False)
 
 
-# --- Entry point ---
 if TEST_MODE:
-    # Fires a fake alert so you can confirm the webhook works, without touching real logic
     alert("🧪 TEST: This is what a stock alert looks like! Webhook is working. 🎉")
 else:
     check()
