@@ -1,5 +1,7 @@
+# probScrapeSites.py — scrapes Magic Madhouse, returns a list of products
 import requests
 
+SOURCE = "Magic Madhouse"
 KLEVU_SEARCH_URL = "https://eucs25.ksearchnet.com/cs/v2/search"
 KLEVU_KEY = "klevu-161710301480613427"
 
@@ -10,9 +12,8 @@ HEADERS = {
 }
 
 
-def fetch_magic_madhouse():
-    name = "Magic Madhouse"
-
+def fetch():
+    """Returns (source_name, [products])."""
     payload = {
         "context": {"apiKeys": [KLEVU_KEY]},
         "recordQueries": [
@@ -30,11 +31,10 @@ def fetch_magic_madhouse():
         ],
     }
 
-    r = requests.post(KLEVU_SEARCH_URL, headers=HEADERS, json=payload)
+    r = requests.post(KLEVU_SEARCH_URL, headers=HEADERS, json=payload, timeout=15)
     r.raise_for_status()
     data = r.json()
 
-    # find the "productList" result block
     records = []
     for query_result in data.get("queryResults", []):
         if query_result.get("id") == "productList":
@@ -50,18 +50,4 @@ def fetch_magic_madhouse():
             "in_stock": int(rec.get("inventory_level", 0) or 0) > 0,
         })
 
-    return name, products
-
-
-def main():
-    name, products = fetch_magic_madhouse()
-
-    print(f"\n{name} — found {len(products)} product(s):\n")
-    for p in products:
-        stock = "IN STOCK" if p["in_stock"] else "out of stock"
-        print(f"  {p['name']}  |  £{p['price']}  |  {stock}")
-        print(f"    {p['url']}")
-
-
-if __name__ == "__main__":
-    main()
+    return SOURCE, products

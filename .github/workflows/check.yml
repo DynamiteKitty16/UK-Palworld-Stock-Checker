@@ -32,7 +32,7 @@ jobs:
           MANUAL_RUN: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
           HEARTBEAT: ${{ github.event.schedule == '0 12 * * *' && '1' || '0' }}
           TEST_MODE: ${{ github.event.inputs.test_ping == 'true' && '1' || '0' }}
-        run: python probShopifySites.py
+        run: python check_stock.py          # ← CHANGED: was probShopifySites.py
 
       - name: Save state back to repo
         run: |
