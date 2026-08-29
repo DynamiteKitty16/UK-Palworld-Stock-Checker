@@ -34,6 +34,7 @@ def fetch():
         url = p.get("url", "")
         if url.startswith("/"):
             url = BASE + url
+        url = url.split("?")[0] 
 
         products.append({
             "name": title,
