@@ -3,7 +3,6 @@ import requests, json, os
 
 URL = "https://thecardvault.co.uk/collections/palworld-official-card-game-all-products/products.json?limit=250"
 HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
-WATCH_KEYWORDS = ["set 02", "set 2", "legends awaken"]
 STATE_FILE = "seen.json"
 DISCORD_WEBHOOK = os.environ["DISCORD_WEBHOOK"]
 DISCORD_USER_ID = os.environ.get("DISCORD_USER_ID")  # for pinging me in alerts, if set
@@ -21,7 +20,9 @@ def get_products():
 
 
 def is_watched(title):
-    return any(w in title.lower() for w in WATCH_KEYWORDS)
+    # The feed is the Palworld collection, so everything in it is watched.
+    # Light "palworld" check is just a safety net in case the URL ever changes.
+    return "palworld" in title.lower()
 
 
 def load_state():
@@ -74,9 +75,9 @@ def check():
     if HEARTBEAT or MANUAL_RUN:
         if watched_in_stock:
             items = "\n".join(f"• {t}" for t in watched_in_stock)
-            alert(f"✅ Checked {len(products)} products — these watched items are IN STOCK:\n{items}")
+            alert(f"✅ Checked {len(products)} products — these Palworld items are IN STOCK:\n{items}")
         else:
-            alert(f"✅ Checked {len(products)} products — nothing watched is in stock right now! 😴", ping=False)
+            alert(f"✅ Checked {len(products)} products — nothing is in stock right now! 😴", ping=False)
 
 
 if TEST_MODE:

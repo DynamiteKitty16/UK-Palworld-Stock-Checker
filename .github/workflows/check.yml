@@ -5,6 +5,11 @@ on:
     - cron: "*/15 * * * *"   # every 15 minutes — normal silent checks
     - cron: "0 12 * * *"     # once a day at 12:00 UTC — daily heartbeat summary
   workflow_dispatch:          # manual "Run" button (always reports back)
+    inputs:
+      test_ping:
+        description: "Send a test ping to check the @ works"
+        type: boolean
+        default: false
 
 jobs:
   check:
@@ -23,9 +28,10 @@ jobs:
       - name: Run checker
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}   # <-- new
+          DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}
           MANUAL_RUN: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
           HEARTBEAT: ${{ github.event.schedule == '0 12 * * *' && '1' || '0' }}
+          TEST_MODE: ${{ github.event.inputs.test_ping == 'true' && '1' || '0' }}
         run: python probShopifySites.py
 
       - name: Save state back to repo
