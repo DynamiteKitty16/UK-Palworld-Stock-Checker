@@ -5,7 +5,8 @@ import json
 import notify
 import probShopifySites
 import probScrapeSites
-import probUnicornCards    
+import probUnicornCards
+import probThistleTavern
 
 STATE_FILE = "seen.json"
 
@@ -14,7 +15,7 @@ HEARTBEAT  = os.environ.get("HEARTBEAT") == "1"
 MANUAL_RUN = os.environ.get("MANUAL_RUN") == "1"
 
 # Add more scrapers to this list in future — that's the only change needed!
-SITES = [probShopifySites, probScrapeSites]
+SITES = [probShopifySites, probScrapeSites, probUnicornCards, probThistleTavern]
 
 
 def load_state():
