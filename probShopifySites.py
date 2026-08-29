@@ -6,6 +6,7 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
 WATCH_KEYWORDS = ["set 02", "set 2", "legends awaken"]
 STATE_FILE = "seen.json"
 DISCORD_WEBHOOK = os.environ["DISCORD_WEBHOOK"]
+DISCORD_USER_ID = os.environ.get("DISCORD_USER_ID")  # for pinging me in alerts, if set
 
 # --- Toggles (read from environment variables set by the workflow) ---
 TEST_MODE  = os.environ.get("TEST_MODE") == "1"
@@ -37,7 +38,10 @@ def save_state(state):
 
 def alert(message, ping=True):
     print("ALERT:", message)
-    content = ("@here " + message) if ping else message
+    if ping and DISCORD_USER_ID:
+        content = f"<@{DISCORD_USER_ID}> {message}"
+    else:
+        content = message
     requests.post(DISCORD_WEBHOOK, json={"content": content})
 
 

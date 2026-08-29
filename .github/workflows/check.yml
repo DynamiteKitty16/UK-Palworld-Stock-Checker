@@ -23,6 +23,7 @@ jobs:
       - name: Run checker
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_USER_ID: ${{ secrets.DISCORD_USER_ID }}   # <-- new
           MANUAL_RUN: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
           HEARTBEAT: ${{ github.event.schedule == '0 12 * * *' && '1' || '0' }}
         run: python probShopifySites.py
