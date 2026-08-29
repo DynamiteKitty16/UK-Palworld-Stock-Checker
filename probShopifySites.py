@@ -71,11 +71,11 @@ def check():
     save_state(state)
     print(f"Checked {len(products)} products.")
 
-    # Report back on daily heartbeat OR whenever you run it manually
+    # Report back on daily heartbeat OR whenever you run it manually (silent — no ping)
     if HEARTBEAT or MANUAL_RUN:
         if watched_in_stock:
             items = "\n".join(f"• {t}" for t in watched_in_stock)
-            alert(f"✅ Checked {len(products)} products — these Palworld items are IN STOCK:\n{items}")
+            alert(f"✅ Checked {len(products)} products — these Palworld items are IN STOCK:\n{items}", ping=False)
         else:
             alert(f"✅ Checked {len(products)} products — nothing is in stock right now! 😴", ping=False)
 
