@@ -2,8 +2,8 @@ name: Palworld Stock Check
 
 on:
   schedule:
-    - cron: "*/15 * * * *"   # every 15 min (see timing note below)
-  workflow_dispatch:          # lets you run it manually from the Actions tab
+    - cron: "7,22,37,52 * * * *"   # odd minutes dodge the top-of-hour crush
+  workflow_dispatch:
 
 # Allow the workflow to push seen.json back to the repo
 permissions:
