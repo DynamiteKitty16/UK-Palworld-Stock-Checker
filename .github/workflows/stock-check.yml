@@ -1,8 +1,10 @@
 name: Palworld Stock Check
 
 on:
+  repository_dispatch:
+    types: [stock-check]
   schedule:
-    - cron: "7,22,37,52 * * * *"   # odd minutes dodge the top-of-hour crush
+    - cron: "7,22,37,52 * * * *"   # keep as a free backup
   workflow_dispatch:
 
 # Allow the workflow to push seen.json back to the repo
