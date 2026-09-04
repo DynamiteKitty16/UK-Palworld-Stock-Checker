@@ -30,6 +30,7 @@
     "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-sleeve-card-set-vol-1",
     "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-storage-box-vol-1-petallia-sweet-blessings",
     "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-storage-box-vol-1-shadowbeak-seed-of-despair",
+    "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-dawn-of-palpagos-1st-edition-booster-display-box-12-count-misprint-box-palword",
     "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-dawn-of-palpagos-booster-display-box-12-count",
     "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-dawn-of-palpagos-green-purple-trial-deck",
     "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-dawn-of-palpagos-red-blue-trial-deck"
@@ -67,6 +68,7 @@
     "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-card-sleeves-vol-1-petallia-sweet-blessings": true,
     "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-storage-box-vol-1-shadowbeak-seed-of-despair": true,
     "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-card-sleeves-vol-1-grizzbolt-rumbling-tank": true,
-    "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-sleeve-card-set-vol-1": false
+    "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-sleeve-card-set-vol-1": false,
+    "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-dawn-of-palpagos-1st-edition-booster-display-box-12-count-misprint-box-palword": true
   }
 }
