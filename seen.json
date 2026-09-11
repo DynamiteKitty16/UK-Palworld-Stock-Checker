@@ -17,6 +17,8 @@
     "The Card Vault::https://thecardvault.co.uk/products/palworld-official-card-game-dawn-of-palpagos-display-case-12x-booster-boxes",
     "The Card Vault::https://thecardvault.co.uk/products/palworld-official-card-game-dawn-of-palpagos-green-purple-trial-deck",
     "The Card Vault::https://thecardvault.co.uk/products/palworld-official-card-game-dawn-of-palpagos-red-and-blue-trial-deck",
+    "The Card Vault::https://thecardvault.co.uk/products/palworld-official-card-game-eternal-ascent-blue-purple-trial-deck",
+    "The Card Vault::https://thecardvault.co.uk/products/palworld-official-card-game-eternal-ascent-red-green-trial-deck",
     "The Card Vault::https://thecardvault.co.uk/products/palworld-official-card-game-legends-awaken-booster-box-12x-packs",
     "The Card Vault::https://thecardvault.co.uk/products/palworld-official-card-game-legends-awaken-booster-pack",
     "The Card Vault::https://thecardvault.co.uk/products/palworld-official-card-game-legends-awaken-display-case-12x-booster-boxes",
@@ -69,6 +71,8 @@
     "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-storage-box-vol-1-shadowbeak-seed-of-despair": true,
     "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-card-sleeves-vol-1-grizzbolt-rumbling-tank": true,
     "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-sleeve-card-set-vol-1": false,
-    "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-dawn-of-palpagos-1st-edition-booster-display-box-12-count-misprint-box-palword": false
+    "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-dawn-of-palpagos-1st-edition-booster-display-box-12-count-misprint-box-palword": false,
+    "The Card Vault::https://thecardvault.co.uk/products/palworld-official-card-game-eternal-ascent-red-green-trial-deck": false,
+    "The Card Vault::https://thecardvault.co.uk/products/palworld-official-card-game-eternal-ascent-blue-purple-trial-deck": false
   }
 }
