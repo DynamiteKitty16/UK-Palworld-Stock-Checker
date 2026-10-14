@@ -51,7 +51,15 @@ def main():
         try:
             source, products = site.fetch()
         except Exception as e:
-            notify.send(f"⚠️ Error checking {getattr(site, 'SOURCE', site.__name__)}: {e}", ping=True)
+            msg = str(e)
+            # Transient network hiccups (resets, timeouts, rate limits) self-recover
+            # on the next run — just log them, don't spam Discord or ping.
+            noisy = ("connection aborted", "connection reset", "read timed out",
+                     "timed out", "429", "max retries", "remotedisconnected")
+            if any(n in msg.lower() for n in noisy):
+                print(f"(silenced) Error checking {getattr(site, 'SOURCE', site.__name__)}: {msg}")
+            else:
+                notify.send(f"⚠️ Error checking {getattr(site, 'SOURCE', site.__name__)}: {e}")
             continue
 
         for p in products:
