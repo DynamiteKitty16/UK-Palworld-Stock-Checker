@@ -56,6 +56,7 @@
     "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-dawn-of-palpagos-booster-display-box-12-count",
     "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-dawn-of-palpagos-green-purple-trial-deck",
     "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-dawn-of-palpagos-red-blue-trial-deck",
+    "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-legends-awaken-1st-edition-booster-display-box-12-count",
     "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-sleeve-card-set-vol1-english-edition"
   ],
   "stock": {
@@ -115,6 +116,7 @@
     "Thistle Tavern::https://thistletavern.com/products/palworld-legends-awaken-release-tournament-aberdeen-15-november-2026-1pm": true,
     "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-dawn-of-palpagos-red-blue-trial-deck": true,
     "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-bp02-legends-awaken-boosters": true,
-    "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-dawn-of-palpagos-booster": true
+    "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-dawn-of-palpagos-booster": true,
+    "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-legends-awaken-1st-edition-booster-display-box-12-count": true
   }
 }
