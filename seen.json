@@ -5,6 +5,8 @@
     "Magic Madhouse::https://magicmadhouse.co.uk/bushiroad-palworld-tcg-dawn-of-palpagos-greenpurple-trial-deck",
     "Magic Madhouse::https://magicmadhouse.co.uk/bushiroad-palworld-tcg-dawn-of-palpagos-redblue-trial-deck",
     "Magic Madhouse::https://magicmadhouse.co.uk/bushiroad-palworld-tcg-grizzbolt-rumbling-tank-vol1-card-sleeves",
+    "Magic Madhouse::https://magicmadhouse.co.uk/bushiroad-palworld-tcg-legends-awaken-booster-box",
+    "Magic Madhouse::https://magicmadhouse.co.uk/bushiroad-palworld-tcg-legends-awaken-booster-pack",
     "Magic Madhouse::https://magicmadhouse.co.uk/bushiroad-palworld-tcg-petallia-sweet-blessings-vol1-card-sleeves",
     "Magic Madhouse::https://magicmadhouse.co.uk/bushiroad-palworld-tcg-petallia-sweet-blessings-vol1-rubber-playmat",
     "Magic Madhouse::https://magicmadhouse.co.uk/bushiroad-palworld-tcg-petallia-sweet-blessings-vol1-storage-box",
@@ -119,6 +121,8 @@
     "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-bp02-legends-awaken-boosters": true,
     "Thistle Tavern::https://thistletavern.com/products/palworld-official-card-game-dawn-of-palpagos-booster": true,
     "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-legends-awaken-1st-edition-booster-display-box-12-count": true,
-    "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-legends-awaken-1st-edition-booster-display-box-x12-sealed-case": true
+    "Unicorn Cards::https://unicorncards.co.uk/palworld-official-card-game-legends-awaken-1st-edition-booster-display-box-x12-sealed-case": true,
+    "Magic Madhouse::https://magicmadhouse.co.uk/bushiroad-palworld-tcg-legends-awaken-booster-box": false,
+    "Magic Madhouse::https://magicmadhouse.co.uk/bushiroad-palworld-tcg-legends-awaken-booster-pack": false
   }
 }
